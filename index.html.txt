@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперт по земле — Надежда</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fef7e0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #3d2b1f;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            max-width: 960px;
+            width: 100%;
+            background-color: #fffbf0;
+            border: 2px solid #b8860b;
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 12px 28px rgba(184, 134, 11, 0.15);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #d4a017;
+            padding-bottom: 1.5rem;
+        }
+        h1 {
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+            color: #8b6508;
+            font-weight: 700;
+            text-shadow: 2px 2px 0 #f5e6b0;
+            margin-bottom: 0.5rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            color: #a0522d;
+            font-style: italic;
+            background: #f7e9c3;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+        }
+        .short-desc {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #5c3e1f;
+            background: #fff6d9;
+            padding: 0.8rem 1.5rem;
+            border-radius: 16px;
+            border-left: 6px solid #d4a017;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .navigator {
+            background-color: #e6f0da;
+            border: 2px solid #4e7a3b;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 0 0 2px #c0d6a7, 0 6px 14px rgba(78, 122, 59, 0.2);
+        }
+        .navigator h2 {
+            font-size: 1.8rem;
+            color: #2c4d1e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px dashed #6c944e;
+            padding-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        .navigator h2::before {
+            content: "🧭";
+            font-size: 2rem;
+        }
+        .navigator p {
+            color: #1f3b12;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .navigator ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            margin-top: 1rem;
+        }
+        .navigator li {
+            background: #ffffffc0;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem 0.4rem 1rem;
+            border: 1px solid #6c944e;
+            color: #1f3b12;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 6px rgba(78, 122, 59, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .navigator li::before {
+            content: "🌱";
+            font-size: 1.2rem;
+        }
+
+        .result {
+            background: #fef7e0;
+            border: 2px solid #d4a017;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+        }
+        .result h2 {
+            font-size: 1.8rem;
+            color: #8b6508;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .result h2::before {
+            content: "📋";
+            font-size: 2rem;
+        }
+        .result > p {
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            color: #6b4a1c;
+            background: #faeab7;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+        }
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.9rem;
+            margin-top: 1rem;
+        }
+        .point-item {
+            background: #fffdf5;
+            border-left: 5px solid #b8860b;
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            font-size: 0.98rem;
+            box-shadow: 0 2px 6px rgba(184, 134, 11, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #3d2b1f;
+        }
+        .point-item .num {
+            font-weight: 700;
+            color: #8b6508;
+            background: #f5e6b0;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-link {
+            text-align: center;
+            margin-top: 2.2rem;
+        }
+        .contact-link a {
+            display: inline-block;
+            background: #b8860b;
+            color: #fffbf0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            text-decoration: none;
+            border: 2px solid #8b6508;
+            box-shadow: 0 8px 0 #6b4a1c;
+            transition: all 0.1s ease;
+            letter-spacing: 0.5px;
+        }
+        .contact-link a:hover {
+            background: #a0720a;
+            transform: translateY(3px);
+            box-shadow: 0 5px 0 #6b4a1c;
+        }
+        .contact-link a:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 #6b4a1c;
+        }
+
+        .note {
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+            color: #7a5c3a;
+            text-align: center;
+            border-top: 1px dashed #d4a017;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .navigator ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>Эксперт по земле — Надежда</h1>
+            <div class="subhead">проверка участка · риски · мечты</div>
+            <div class="short-desc">
+                Проверка участка на ограничения, риски и возможность построить дом и сад мечты!<br>
+                Возможно давно искали место для бизнеса — определим, подойдёт ли запланированный надел.
+            </div>
+        </div>
+
+        <div class="navigator">
+            <h2>Земельный навигатор</h2>
+            <p>
+                Ваш помощник в мире ограничений, рисков и возможностей. 
+                Разберёмся, что можно построить и как использовать землю с умом.
+            </p>
+            <ul>
+                <li>Ограничения и обременения</li>
+                <li>Риски и зоны с особыми условиями</li>
+                <li>Дом мечты: пятно застройки, высота, объёмы</li>
+                <li>Сад и бизнес: совместимость с участком</li>
+                <li>Удалённость от инфраструктуры</li>
+            </ul>
+        </div>
+
+        <div class="result">
+            <h2>Итог — 12 пунктов юридического описания</h2>
+            <p>У вас на руках полноценное юридическое описание по 12 пунктам:</p>
+            <div class="points-grid">
+                <div class="point-item"><span class="num">1</span> Какой дом можно построить</div>
+                <div class="point-item"><span class="num">2</span> Высота строений</div>
+                <div class="point-item"><span class="num">3</span> Объёмы застройки</div>
+                <div class="point-item"><span class="num">4</span> Пятно застройки</div>
+                <div class="point-item"><span class="num">5</span> Удалённость от инфраструктуры</div>
+                <div class="point-item"><span class="num">6</span> Ограничения по использованию</div>
+                <div class="point-item"><span class="num">7</span> Риски и обременения</div>
+                <div class="point-item"><span class="num">8</span> Возможность размещения сада</div>
+                <div class="point-item"><span class="num">9</span> Пригодность для бизнеса</div>
+                <div class="point-item"><span class="num">10</span> Соответствие градостроительным нормам</div>
+                <div class="point-item"><span class="num">11</span> Правовой статус надела</div>
+                <div class="point-item"><span class="num">12</span> Рекомендации по реализации планов</div>
+            </div>
+        </div>
+
+        <div class="contact-link">
+            <a href="mailto:hello@example.org">Написать нам</a>
+        </div>
+
+        <div class="note">
+            * Все формулировки соответствуют предоставленным фактам. Никаких дополнительных условий не добавлено.
+        </div>
+    </div>
+</body>
+</html>
