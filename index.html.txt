@@ -204,13 +204,24 @@
             box-shadow: 0 0 0 #6b4a1c;
         }
 
-        .note {
-            margin-top: 1.8rem;
-            font-size: 0.9rem;
-            color: #7a5c3a;
+        .contact-info {
+            margin-top: 1.4rem;
             text-align: center;
-            border-top: 1px dashed #d4a017;
-            padding-top: 1.2rem;
+            font-size: 1.05rem;
+            color: #5c3e1f;
+        }
+        .contact-info a {
+            color: #8b6508;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #b8860b;
+        }
+        .contact-info a:hover {
+            border-bottom: 1px solid #8b6508;
+        }
+        .contact-info .phone {
+            display: inline-block;
+            margin-left: 0.8rem;
         }
 
         @media (max-width: 600px) {
@@ -272,11 +283,12 @@
         </div>
 
         <div class="contact-link">
-            <a href="mailto:hello@example.org">Написать нам</a>
+            <a href="mailto:n9266780568@yandex.ru">Написать нам</a>
         </div>
 
-        <div class="note">
-            * Все формулировки соответствуют предоставленным фактам. Никаких дополнительных условий не добавлено.
+        <div class="contact-info">
+            <a href="mailto:n9266780568@yandex.ru">n9266780568@yandex.ru</a>
+            <span class="phone">+7 977 930 71 88</span>
         </div>
     </div>
 </body>
